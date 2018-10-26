@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <a href="{% url 'model:create' %}">Create</a>
+    <ul>
+      {% if object_list %}
+        {% for object in object_list %}
+          <li>
+            {{ object }}
+            <a href="{% url 'model:update' object.id %}">Update</a> |
+            <a href="{% url 'model:details' object.id %}">Details</a> |
+            <a href="{% url 'model:delete' object.id %}">Delete</a>
+          </li>
+        {% endfor %}
+      {% else %}
+        <p>You have not created any model instances yet.</p>
+      {% endif %}
+  </body>
+</html>
