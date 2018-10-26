@@ -20,14 +20,14 @@ class CreateModelView(generic.CreateView):
     template_name = os.path.join(app_name, 'create.html')
     model = Model
     fields = "__all__"
-    success_url = reverse_lazy('app_name:list')
+    success_url = reverse_lazy('app_name:overview')
 
 class UpdateModelView(generic.CreateView):
 
     template_name = os.path.join(app_name, 'update.html')
     model = Model
     fields = "__all__"
-    success_url = reverse_lazy('app_name:list')
+    success_url = reverse_lazy('app_name:overview')
 
 class ModelDetailsView(generic.DetailView):
 
@@ -40,4 +40,4 @@ class DeleteModelView(generic.DeleteView):
     template_name = os.path.join(app_name, 'confirm_delete.html')
     model = Model
     fields = '__all__'
-    success_url = reverse_lazy('app_name:list')
+    success_url = reverse_lazy('app_name:overview')
